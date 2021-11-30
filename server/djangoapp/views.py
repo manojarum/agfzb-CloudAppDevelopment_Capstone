@@ -93,7 +93,7 @@ def registration_request(request):
 # Update the `get_dealerships` view to render the index page with a list of dealerships
 def get_dealerships(request):
     if request.method == "GET":
-        url = "https://13efd609.eu-gb.apigw.appdomain.cloud/api/dealership"
+        url = "https://4b768a2e.eu-gb.apigw.appdomain.cloud/api/dealership"
         # Get dealers from the URL
         dealerships = get_dealers_from_cf(url)
         # Concat all dealer's short name
@@ -111,9 +111,9 @@ def get_dealerships(request):
 def get_dealer_details(request, dealer_id):
     context = {}
     if request.method == "GET":
-        url = 'https://13efd609.eu-gb.apigw.appdomain.cloud/api/review'
+        url = 'https://e4996d2b.us-south.apigw.appdomain.cloud/api/review'
         reviews =  get_dealer_reviews_from_cf(url, dealer_id)
-        url2 = "https://13efd609.eu-gb.apigw.appdomain.cloud/api/dealership"
+        url2 = "https://4b768a2e.eu-gb.apigw.appdomain.cloud/api/dealership"
         # Get dealers from the URL
         dealerships = get_dealers_from_cf(url2)
         dealership = {}
@@ -145,7 +145,7 @@ def add_review(request, dealer_id):
                 review["car_make"] =car.model.name
             json_payload = {"review": review}
             print (review)
-            url = "https://13efd609.eu-gb.apigw.appdomain.cloud/api/review"
+            url = "https://066b3d52.us-south.apigw.appdomain.cloud/api/review"
             post_request(url, json_payload, dealerId=dealer_id)
             return redirect("djangoapp:dealer_details", dealer_id=dealer_id)
         else: 
