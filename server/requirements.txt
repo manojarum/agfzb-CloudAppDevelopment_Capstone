@@ -2,4 +2,8 @@ requests
 Django
 gunicorn==20.0.4
 Pillow==8.0.1
+<<<<<<< HEAD
 ibm-watson==5.1.0
+=======
+ibm-watson==5.1.0
+>>>>>>> 8c9c37750635fe96b5f1cacf1cea846c8b6ffe45
